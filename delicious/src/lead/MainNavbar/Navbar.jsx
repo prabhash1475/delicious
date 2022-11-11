@@ -1,6 +1,7 @@
 import {
   Box,
   Button,
+
   Image,
   Input,
   Menu,
@@ -8,17 +9,22 @@ import {
   MenuItem,
   MenuList,
   Select,
+
 } from "@chakra-ui/react";
+
+=======
 
 import React from "react";
 
 const Navbar = () => {
   return (
+
     <Box
       p={{ base: "0px", sm: "1px", md: "3px", lg: "10px" }}
       border="1px solid red"
       ml={{ base: "0px" }}
     >
+
       <Box
         display="flex"
         alignItems="center"
@@ -34,7 +40,9 @@ const Navbar = () => {
           alt="logo"
         />
 
+
         <Box display={{ lg: "flex" }} alignItems="center">
+
           <img src="	https://www.licious.in/img/rebranding/location_icon.svg" />
           <Select border="none">
             <option value="option1">Banglore</option>
@@ -66,11 +74,13 @@ const Navbar = () => {
           </button>
         </form> */}
 
+
         <Input
           width={{ sm: "12%", md: "23%", lg: "30%" }}
           placeholder="Search for any Delicious Producr"
         />
         {/* <Input width="30%" placeholder="Search for any Delicious Producr" /> */}
+
         <Image
           marginLeft="-8%"
           src="	https://www.licious.in/img/rebranding/search_icon.svg"
@@ -184,7 +194,9 @@ const Navbar = () => {
         </Box>
         <Box display="flex" alignItems="center" gap={"10px"}>
           <Image src="	https://www.licious.in/img/rebranding/cart_icon.svg" />
+
           Cart
+
         </Box>
       </Box>
     </Box>
