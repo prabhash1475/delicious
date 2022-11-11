@@ -130,7 +130,11 @@ const Home = () => {
     "https://tan-real-buffalo.cyclic.app/shopBYCategory"
   );
   return (
+
     <Box bg="#fcfcfc">
+
+       {/* Banner */}
+
       <Box border="3px">
         <Carousel loop={true} showDots={true} autoplay={3000}>
           {bannerSlider.map((img) => (
@@ -143,12 +147,16 @@ const Home = () => {
         </Carousel>
       </Box>
 
+      {/* Subscribe */}
+
       <Box position="fixed" left={"15px"} bottom={"60px"}>
         <Img
           src="https://www.licious.in/img/rebranding/banner/side.png"
           width={"100px"}
         />
       </Box>
+
+       {/* Shop by Category */}
 
       <Container
         maxW={{ base: "full", md: "container.xl", lg: "85%" }}
@@ -198,7 +206,7 @@ const Home = () => {
                   h="204px"
                   bg="#fff"
                   borderRadius={"8px"}
-                  boxShadow="md"
+                  boxShadow="sm"
                   _hover={{ cursor: "pointer" }}
                 >
 
@@ -232,6 +240,8 @@ const Home = () => {
             ))}
         </Grid>
       </Container>
+
+       {/* Meatopia */}
 
       <Box m="auto" mt="20px" cursor="pointer" w="68.5%" borderRadius="10px">
         <Box
@@ -270,7 +280,26 @@ const Home = () => {
         </Box>
       </Box>
 
+      
+
       <Box
+        align="center"
+        m="auto"
+        mt="20px"
+        cursor="pointer"
+        w="fit-content"
+        shadow="md"
+        borderRadius={8}
+      >
+        <Img
+          src=" https://dao54xqhg9jfa.cloudfront.net/OMS-StaticBanner/4c895baf-28fb-2833-8d19-37d05c51d39c/original/static-bank-units-Sep-web_(11).jpg?format=webp"
+          borderRadius={8}
+        />
+      </Box>
+
+       {/* My Reawards  */}
+
+       <Box
         m="auto"
         mt="20px"
         w="68.5%"
@@ -328,6 +357,8 @@ const Home = () => {
         </Box>
       </Box>
 
+       {/* Explore by Category  */}
+
 
       <Container
         maxW={{ base: "full", md: "container.xl", lg: "85%" }}
@@ -377,7 +408,7 @@ const Home = () => {
                   h={{lg:"204px",md:'204px',sm:'70%'}}
                   bg="#fff"
                   borderRadius={"8px"}
-                  boxShadow="md"
+                  boxShadow="sm"
                   _hover={{ cursor: "pointer" }}
                 >
 
@@ -412,20 +443,7 @@ const Home = () => {
         </Grid>
       </Container>
 
-      <Box
-        align="center"
-        m="auto"
-        mt="20px"
-        cursor="pointer"
-        w="fit-content"
-        shadow="md"
-        borderRadius={8}
-      >
-        <Img
-          src=" https://dao54xqhg9jfa.cloudfront.net/OMS-StaticBanner/4c895baf-28fb-2833-8d19-37d05c51d39c/original/static-bank-units-Sep-web_(11).jpg?format=webp"
-          borderRadius={8}
-        />
-      </Box>
+      
 
       
 
