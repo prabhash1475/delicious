@@ -1,7 +1,7 @@
 import {
   Box,
   Button,
-  Container,
+
   Image,
   Input,
   Menu,
@@ -9,14 +9,22 @@ import {
   MenuItem,
   MenuList,
   Select,
-  VStack,
+
 } from "@chakra-ui/react";
-import { ChevronDownIcon } from "@chakra-ui/icons";
+
+=======
+
 import React from "react";
 
 const Navbar = () => {
   return (
-    <Box p={"10px"}>
+
+    <Box
+      p={{ base: "0px", sm: "1px", md: "3px", lg: "10px" }}
+      border="1px solid red"
+      ml={{ base: "0px" }}
+    >
+
       <Box
         display="flex"
         alignItems="center"
@@ -26,11 +34,15 @@ const Navbar = () => {
         marginRight="10%"
       >
         <Image
-          src="https://www.licious.in/img/rebranding/licious-logo.svg"
+          w={{ base: "3%", sm: "7%", md: "10%", lg: "15%" }}
+          // w="15%"
+          src="https://i.postimg.cc/xC4gqtdf/delicious-logo.png"
           alt="logo"
         />
 
-        <Box display="flex" alignItems="center">
+
+        <Box display={{ lg: "flex" }} alignItems="center">
+
           <img src="	https://www.licious.in/img/rebranding/location_icon.svg" />
           <Select border="none">
             <option value="option1">Banglore</option>
@@ -62,7 +74,13 @@ const Navbar = () => {
           </button>
         </form> */}
 
-        <Input width="30%" placeholder="Search for any Delicious Producr" />
+
+        <Input
+          width={{ sm: "12%", md: "23%", lg: "30%" }}
+          placeholder="Search for any Delicious Producr"
+        />
+        {/* <Input width="30%" placeholder="Search for any Delicious Producr" /> */}
+
         <Image
           marginLeft="-8%"
           src="	https://www.licious.in/img/rebranding/search_icon.svg"
@@ -176,7 +194,9 @@ const Navbar = () => {
         </Box>
         <Box display="flex" alignItems="center" gap={"10px"}>
           <Image src="	https://www.licious.in/img/rebranding/cart_icon.svg" />
-          Add to Cart
+
+          Cart
+
         </Box>
       </Box>
     </Box>
