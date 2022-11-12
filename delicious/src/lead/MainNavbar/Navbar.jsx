@@ -11,7 +11,6 @@ import {
   MenuList,
   Select,
 } from "@chakra-ui/react";
-import { ChevronDownIcon } from "@chakra-ui/icons";
 
 import React from "react";
 
