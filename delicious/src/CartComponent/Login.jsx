@@ -23,6 +23,7 @@ import Logo from "./delicious-logo.png"
 import {useDispatch} from 'react-redux'
 import deliciousLoginBgImg1 from "./deliciousLoginBgImg1.jpg"
 import { login_success,login_failure,login_request } from "./Redux/Auth/action";
+import { loadData, saveData } from "./Redux/utils/localStorage";
 
 export const Login=()=>{
       const { isOpen, onOpen, onClose } = useDisclosure();
@@ -34,6 +35,8 @@ export const Login=()=>{
       const [display0,setDisplay0]=useState('block');
       const [display1,setDisplay1]=useState('none');
       const [display2,setDisplay2]=useState('none');
+      const [signUpData,setSignUpData]=useState(loadData("signUpData") || []);
+      const [signInData,setSignInData]=useState(loadData("signInData") || [])
 
       const dispatch=useDispatch()
     
@@ -69,38 +72,57 @@ export const Login=()=>{
           setDisplay0('none')
           setDisplay1('block')
           // setDisplay2('block')
-          let status=Login();
-          console.log(status)
-          if(status===true){
+          let RegistrationStatus=Registration();
+          // console.log(RegistrationStatus)
+          if(RegistrationStatus===true){
               // console.log('login successful')
-              loginData.push(mobileNo);
-              dispatch(login_success())
+              // loginData.push(mobileNo);
+              var loginStatus=false;
+              signInData.map((e)=>{
+                  if(e===mobileNo){
+                     loginStatus=true
+                  }
+              });
+              if(loginStatus==false){
+                  saveData("signInData",[...signInData,mobileNo]);
+                  dispatch(login_success());
+                  // console.log("1")
+              }else{
+                  dispatch(login_success());
+                  // console.log("2")
+              }
+              
+              
           }else{
               // console.log('Registration successful')
-                 registrationData.push(mobileNo)
+              //    registrationData.push(mobileNo)
+              saveData("signUpData",[...signUpData,mobileNo])
+              dispatch(login_success());
+              // console.log("3")
               //    dispatch(login_failure())
           }
-          console.log(registrationData,loginData)
+          console.log(signInData,signUpData,RegistrationStatus,loginStatus)
       };
 
-      const Login=()=>{
+      const Registration=()=>{
           dispatch(login_request())
-          console.log(mobileNo);
           // console.log(registrationData,loginData)
-          let status=false;
-          registrationData.map((e,i)=>{
-              if(e==mobileNo){
-                  console.log(e,i)
+          let flag=false;
+          // registrationData.map((e,i)=>{
+          //     if(e==mobileNo){
+          //         console.log(e,i)
                   
-                  // return true;
-                  status=true;
+          //         // return true;
+          //         status=true;
+          //     }
+          signUpData.map((e,i)=>{
+              if(e==mobileNo){
+                  flag=true;
               }
-          });
-          console.log(status);
-      
+          });        
       //    console.log(registrationData,loginData)
       // return false;
-      return status;
+      return flag;
       }
 
       const handleOTP=(e)=>{
