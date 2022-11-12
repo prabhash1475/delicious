@@ -11,16 +11,13 @@ import {
   MenuList,
   Select,
 } from "@chakra-ui/react";
-import {ChevronDownIcon} from "@chakra-ui/icons"
-
+import { ChevronDownIcon } from "@chakra-ui/icons";
 
 import React from "react";
 
 const Navbar = () => {
   return (
-
     <div>
-
       <Box
         display={{ base: "none", sm: "none", md: "none", lg: "block" }}
         p={{ base: "0px", sm: "1px", md: "3px", lg: "10px" }}
@@ -32,7 +29,7 @@ const Navbar = () => {
           alignItems="center"
           gap="20px"
           justifyContent="space-around"
-          marginLeft={"7%"}
+          marginLeft={"3%"}
           marginRight="7%"
         >
           <Image
@@ -73,25 +70,25 @@ const Navbar = () => {
             <Image src="	https://www.licious.in/img/rebranding/search_icon.svg" />
           </button>
         </form> */}
-        
-            <Input 
-              width={{ sm: "12%", md: "23%", lg: "30%" }}
-              placeholder="Search for any Delicious Producr"
-            />
-            {/* <Input width="30%" placeholder="Search for any Delicious Producr" /> */}
 
-            <Image
-              marginLeft="-8%"
-              src="	https://www.licious.in/img/rebranding/search_icon.svg"
-            />
-         
+          <Input
+            width={{ sm: "12%", md: "23%", lg: "30%" }}
+            h="40px"
+            placeholder="Search for any Delicious Producr"
+          />
+          {/* <Input width="30%" placeholder="Search for any Delicious Producr" /> */}
+
+          <Image
+            marginLeft="-8%"
+            src="	https://www.licious.in/img/rebranding/search_icon.svg"
+          />
 
           <Box display="flex" alignItems="center" gap={"10px"}>
             <Image src="	https://www.licious.in/img/rebranding/category-dropdown-icon.svg" />
 
             {/* catogery */}
             <Menu>
-              <MenuButton bg={"none"} as={Button}>
+              <MenuButton _hover={{ bg: "none" }} bg={"none"} as={Button}>
                 <Box> Categogery</Box>
               </MenuButton>
               <MenuList>
@@ -205,7 +202,7 @@ const Navbar = () => {
             // w={{ base: "3%", sm: "7%", md: "10%", lg: "15%" }}
             w="25%"
             display="flex"
-            ml="20%"
+            // mr="100px"
             src="https://i.postimg.cc/xC4gqtdf/delicious-logo.png"
             alt="logo"
           />
@@ -350,9 +347,7 @@ const Navbar = () => {
           </Menu>
         </Box>
       </Box>
-
     </div>
-
   );
 };
 
