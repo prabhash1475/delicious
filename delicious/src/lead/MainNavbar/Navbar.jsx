@@ -11,15 +11,16 @@ import {
   Select,
 
 } from "@chakra-ui/react";
+import {ChevronDownIcon} from "@chakra-ui/icons"
 
-=======
+
 
 import React from "react";
 
 const Navbar = () => {
   return (
-
-    <Box
+     
+    <Box 
       p={{ base: "0px", sm: "1px", md: "3px", lg: "10px" }}
       border="1px solid red"
       ml={{ base: "0px" }}
@@ -200,6 +201,11 @@ const Navbar = () => {
         </Box>
       </Box>
     </Box>
+     
+     
+   
+
+
   );
 };
 
