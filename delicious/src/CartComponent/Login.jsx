@@ -19,14 +19,15 @@ import {
   useDisclosure } from "@chakra-ui/react"
 import { useState } from "react"
 import { OrderBox } from "./OrderBox";
-import Logo from "./delicious-logo.png"
+// import Logo from "./delicious-logo.png"
 import {useDispatch} from 'react-redux'
-import deliciousLoginBgImg1 from "./deliciousLoginBgImg1.jpg"
+// import deliciousLoginBgImg1 from "./deliciousLoginBgImg1.jpg"
 import { login_success,login_failure,login_request } from "./Redux/Auth/action";
 import { loadData, saveData } from "./Redux/utils/localStorage";
+import { Link, Navigate } from "react-router-dom";
 
 export const Login=()=>{
-      const { isOpen, onOpen, onClose } = useDisclosure();
+      let { isOpen, onOpen, onClose } = useDisclosure();
       const [size, setSize] = useState('');
       const [mobileNo, setMobileNo] = useState('');
       const [OTP, setOTP] = useState('');
@@ -37,17 +38,10 @@ export const Login=()=>{
       const [display2,setDisplay2]=useState('none');
       const [signUpData,setSignUpData]=useState(loadData("signUpData") || []);
       const [signInData,setSignInData]=useState(loadData("signInData") || [])
+      const [display,setDisplay]= useState('block')
 
       const dispatch=useDispatch()
     
-      const registrationData=[
-          9423271309,9421218409,9421167202
-      ]
-
-      const loginData=[
-          
-      ]
-
       const handleClick = (newSize) => {
         console.log(newSize)
         setSize(newSize)
@@ -60,9 +54,7 @@ export const Login=()=>{
 
       const handleMobile=(e)=>{
           setMobileNo(e.target.value);
-          // console.log(mobileNo.length)
           if(mobileNo.length===9){
-              // console.log('win')
               setDisabled(false);
               setBg('red')
           }
@@ -71,12 +63,8 @@ export const Login=()=>{
       const handleLogin=()=>{
           setDisplay0('none')
           setDisplay1('block')
-          // setDisplay2('block')
           let RegistrationStatus=Registration();
-          // console.log(RegistrationStatus)
           if(RegistrationStatus===true){
-              // console.log('login successful')
-              // loginData.push(mobileNo);
               var loginStatus=false;
               signInData.map((e)=>{
                   if(e===mobileNo){
@@ -94,34 +82,21 @@ export const Login=()=>{
               
               
           }else{
-              // console.log('Registration successful')
-              //    registrationData.push(mobileNo)
+
               saveData("signUpData",[...signUpData,mobileNo])
               dispatch(login_success());
-              // console.log("3")
-              //    dispatch(login_failure())
+
           }
-          console.log(signInData,signUpData,RegistrationStatus,loginStatus)
       };
 
       const Registration=()=>{
           dispatch(login_request())
-          // console.log(registrationData,loginData)
           let flag=false;
-          // registrationData.map((e,i)=>{
-          //     if(e==mobileNo){
-          //         console.log(e,i)
-                  
-          //         // return true;
-          //         status=true;
-          //     }
           signUpData.map((e,i)=>{
               if(e==mobileNo){
                   flag=true;
               }
           });        
-      //    console.log(registrationData,loginData)
-      // return false;
       return flag;
       }
 
@@ -131,36 +106,35 @@ export const Login=()=>{
 
       const handleLoginOTP=()=>{
           setDisplay2('flex');
+          let flag=false;
           setTimeout(()=>{
               setDisplay2('none'); 
           },3000)
-           if(OTP==='12345'){
-              console.log("LOGIN Successful...!")
+           if(OTP=='12345'){
+            flag=true;
            }else{
               console.log("Invalid OTP...!")
            }
+          //  {flag==true?<Navigate to='/'/>:null}
       }
-      // const sizes = ['sm','xs'];
+
     
       return (
         <>
-          {/* {sizes.map((size) => ( */}
-            <Button
+            <Text
               onClick={(size={base:"xs",sm:"xs",md:"sm",lg:"sm"}) => handleClick(size)}
               key={size}
               m={4}
-              bg={'green'}
-            >Login</Button>
-          {/* //   ))}  */}
+            >Login</Text>
     
-    <Drawer className='LoginDrawer' onClose={onClose} isOpen={isOpen} size={{base:"xs",sm:"xs",md:"sm",lg:"sm"}}>
+    <Drawer display={display} className='LoginDrawer' onClose={onClose} isOpen={isOpen} size={{base:"xs",sm:"xs",md:"sm",lg:"sm"}}>
       <DrawerOverlay />
       <DrawerContent className='LoginDrawer' 
       style={{backgroundImage:'Url("https://thumbs.dreamstime.com/z/raw-meat-various-meats-pork-beef-rustic-background-raw-meat-various-meats-pork-beef-141854433.jpg")'}} 
       >
         <DrawerCloseButton />
         <DrawerHeader>
-           <Image src={Logo}></Image>
+           <Image src="https://i.postimg.cc/xC4gqtdf/delicious-logo.png"></Image>
            {/* <Image src={deliciousLoginImg}></Image> */}
           </DrawerHeader>
         <DrawerBody>

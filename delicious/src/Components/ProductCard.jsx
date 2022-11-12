@@ -1,7 +1,18 @@
 import React from 'react'
 import {Box,Button,Flex,Heading,Image,Spacer,Text} from '@chakra-ui/react'
+import { loadData, saveData } from '../CartComponent/Redux/utils/localStorage';
+import { useState1 } from '../CartComponent/Hooks';
 
 const ProductCard = ({data}) => {
+
+  const [cartData,setcartData] =useState1(loadData("cartData") || [])
+
+  const addToCart=(e)=>{
+    console.log(e)
+    let data=[...cartData,e];
+    saveData("cartData",data)
+  }
+
   return (
     <Box h='470px' >
         <Box key={data.id} w='368px'  shadow='lg' borderRadius='8px' bg='#fff' cursor='pointer'>
@@ -27,7 +38,7 @@ const ProductCard = ({data}) => {
               h="35px"
               p='10px 12px'
               fontWeight='600'
-
+              onClick={()=>addToCart(data)}
             >
               ADD TO CART
             </Button>

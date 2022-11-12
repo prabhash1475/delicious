@@ -10,9 +10,12 @@ import {
   MenuItem,
   MenuList,
   Select,
-} from "@chakra-ui/react";
+} from "@chakra-ui/react"; 
+import { Link } from "react-router-dom";
+import { Cart } from "../../CartComponent/Cart";
 
 import React from "react";
+import { Login } from "../../CartComponent/Login";
 
 const Navbar = () => {
   return (
@@ -30,13 +33,16 @@ const Navbar = () => {
           justifyContent="space-around"
           marginLeft={"3%"}
           marginRight="7%"
-        >
+        >   
+        <Link to="/">
+        
           <Image
-            w={{ base: "3%", sm: "7%", md: "10%", lg: "15%" }}
+            w={{ base: "3%", sm: "7%", md: "10%", lg: "38%" }}
             // w="15%"
             src="https://i.postimg.cc/xC4gqtdf/delicious-logo.png"
             alt="logo"
           />
+          </Link>
 
           <Box display={{ lg: "flex" }} alignItems="center">
             <img src="	https://www.licious.in/img/rebranding/location_icon.svg" />
@@ -101,7 +107,9 @@ const Navbar = () => {
                   />
                   <span>Chicken</span>
                 </MenuItem>
-                <MenuItem minH="40px">
+                  
+               <Link to="/product"> 
+               <MenuItem minH="40px" >
                   <Image
                     boxSize="2rem"
                     borderRadius="full"
@@ -110,7 +118,9 @@ const Navbar = () => {
                     mr="12px"
                   />
                   <span>Fish & Seafood</span>
-                </MenuItem>
+                </MenuItem> 
+                </Link>
+
                 <MenuItem minH="40px">
                   <Image
                     boxSize="2rem"
@@ -166,10 +176,10 @@ const Navbar = () => {
                     boxSize="2rem"
                     borderRadius="full"
                     src="https://dao54xqhg9jfa.cloudfront.net/OMS-Category/04d58840-f014-e613-24d4-1908db9a7e63/original/Eggs.png"
-                    alt="Fish & Seafood"
+                    alt="eggs"
                     mr="12px"
                   />
-                  <span>Fish & Seafood</span>
+                  <span>Eggs</span>
                 </MenuItem>
                 <MenuItem minH="40px">
                   <Image
@@ -186,15 +196,27 @@ const Navbar = () => {
           </Box>
           <Box display="flex" alignItems="center" gap={"10px"}>
             <Image src="https://www.licious.in/img/rebranding/profile_icon.svg" />
-            Login
+            {/* Login */}
+            <Login></Login>
           </Box>
           <Box display="flex" alignItems="center" gap={"10px"}>
-            <Image src="	https://www.licious.in/img/rebranding/cart_icon.svg" />
-            Cart
+            {/* <Image src="https://www.licious.in/img/rebranding/cart_icon.svg" />
+            Cart */}
+            <Cart />
+            
           </Box>
+          {/*  NITIN CART PAGE ---------------------------------- */}
+
+          
+
         </Box>
       </Box>
+
+
       {/* navbar for small screen */}
+
+
+
       <Box display={{ base: "block", sm: "block", md: "block", lg: "none" }}>
         <Box display={"flex"} justifyContent="space-around" mx="10px">
           <Image
@@ -222,7 +244,7 @@ const Navbar = () => {
                   mr="12px"
                 />
                 {/* <span>Category</span> */}
-                {/* manu list of category */}
+                {/* menu list of category */}
                 <Menu>
                   <MenuButton bg={"none"} as={Button}>
                     Categogery
@@ -332,6 +354,8 @@ const Navbar = () => {
                 />
                 <span>Login</span>
               </MenuItem>
+
+               <Link to="/cart">
               <MenuItem minH="48px">
                 <Image
                   boxSize="2rem"
@@ -342,6 +366,8 @@ const Navbar = () => {
                 />
                 <span>Cart</span>
               </MenuItem>
+              </Link> 
+
             </MenuList>
           </Menu>
         </Box>

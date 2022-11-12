@@ -9,7 +9,6 @@ import {
   GridItem,
   Image,
   Img,
-  Link,
   Spinner,
   Stack,
   Heading,
@@ -34,7 +33,8 @@ import {
 import Carousel from "better-react-carousel";
 import useFetch from "../CustomHooks/useFetch";
 import { ChevronRightIcon } from "@chakra-ui/icons";
-import ProductCard from "./ProductCard";
+import ProductCard from "./ProductCard"; 
+import { Link } from "react-router-dom";
 
 const bannerSlider = [
   {
@@ -79,7 +79,7 @@ const bestSellers = [
     img: "https://dao54xqhg9jfa.cloudfront.net/OMS-ProductMerchantdising/ac53a507-4bdd-92cd-ee0b-c96281e04999/original/chicken-curry-cut.jpg?format=webp",
     desc: "Fresh Nakhre & fresh bone-in & boneless chicken cuts",
     weight: "500gms",
-    mrp: "₹179",
+    price: "₹179",
   },
   {
     id: 2,
@@ -87,7 +87,7 @@ const bestSellers = [
     img: "https://dao54xqhg9jfa.cloudfront.net/OMS-ProductMerchantdising/4cad2ee9-9257-9109-62a1-da4082b2cf36/original/sho.jpg?format=webp",
     desc: "Bone-in chunky pieces of skinless meat including Two leg, wing without tip, & breast quarter.",
     weight: "1000gms",
-    mrp: "₹345",
+    price: "₹345",
   },
   {
     id: 3,
@@ -95,7 +95,7 @@ const bestSellers = [
     img: "https://dao54xqhg9jfa.cloudfront.net/OMS-ProductMerchantdising/fcea4075-0ed2-23c1-2b3f-1cddcbd1d11f/original/Chicken-Breast-Boneless-(3-4-Pieces)-Hero-Shot_(1).jpg?format=webp",
     desc: "Fresh Nakhre & fresh bone-in & boneless chicken cuts",
     weight: "450gms",
-    mrp: "₹269",
+    price: "₹269",
   },
   {
     id: 4,
@@ -103,7 +103,7 @@ const bestSellers = [
     img: "https://dao54xqhg9jfa.cloudfront.net/OMS-ProductMerchantdising/a917c576-c350-375a-afad-4882c7fd85a8/original/Classic-Eggs---Pack-of-12-Hero-Shot.jpg?format=webp",
     desc: "Farm to fork nakhre for antibiotic residue-free eggs",
     weight: "Pieces: 12",
-    mrp: "₹137",
+    price: "₹137",
   },
 
   {
@@ -112,7 +112,7 @@ const bestSellers = [
     img: "https://dao54xqhg9jfa.cloudfront.net/OMS-ProductMerchantdising/ca5adea0-fcd4-9787-416a-7b95b3a670b4/original/ChickenLC.jpg?format=webp",
     desc: "Fresh Nakhre for tender bone-in & boneless chicken cuts",
     weight: "500gms",
-    mrp: "₹179",
+    price: "₹179",
   },
 
   {
@@ -121,7 +121,7 @@ const bestSellers = [
     img: "https://dao54xqhg9jfa.cloudfront.net/OMS-ProductMerchantdising/7c01addb-3cff-9c0a-fa68-d4d6d41de5f5/original/large.jpg?format=webp",
     desc: "Half a chicken cut to chunky pieces including Two leg, a wing without the tip, Two breast quarter with backbone. ",
     weight: "1000gms",
-    mrp: "₹345",
+    price: "₹345",
   },
 
   {
@@ -130,7 +130,7 @@ const bestSellers = [
     img: "https://dao54xqhg9jfa.cloudfront.net/OMS-ProductMerchantdising/66e96bfe-5abc-2cd8-18a7-01a9eceb2bfa/original/WhatsApp_Image_2022-04-13_at_2.16.31_PM.jpeg?format=webp",
     desc: "Freshwater prawns. De-shelled, cleaned, deveined, butterflied prawns, with head and tail removed.",
     weight: "250gms",
-    mrp: "₹375",
+    price: "₹375",
   },
 
   {
@@ -139,7 +139,7 @@ const bestSellers = [
     img: "https://d2407na1z3fc0t.cloudfront.net/prodDev/pr_4cyjya5vxs7/1/prod_display_image/1634635899.1919--2021-10-1915:01:39--1818?format=webp",
     desc: "Mildly spiced chunks of freshly roasted chicken blended with the ever popular, Butter Chicken base.",
     weight: "Pieces: 1",
-    mrp: "₹39",
+    price: "₹39",
   },
 
   {
@@ -148,7 +148,7 @@ const bestSellers = [
     img: "https://dao54xqhg9jfa.cloudfront.net/OMS-ProductMerchantdising/ad60f59b-612e-11b8-80f4-3308430cc609/original/Peppery-Chicken-Salami_(1).jpg?format=webp",
     desc: "Our Nakhrebaaz chefs present this meaty gourmet treat.",
     weight: " Pieces: 8    Net wt: 125gms",
-    mrp: "₹199",
+    price: "₹199",
   },
 ];
 
@@ -159,7 +159,7 @@ const bonelesscuts = [
     img: "https://dao54xqhg9jfa.cloudfront.net/OMS-ProductMerchantdising/ffd4144f-25a7-6f26-2d90-9a9db0332dda/original/Chicken_Thigh_Boneless_Hero_Shot.jpg?format=webp",
     desc: "Fresh nakhre for fresh, juicy & tender chicken thigh cuts",
     weight: "450gms",
-    mrp: "₹339",
+    price: "₹339",
   },
 
   {
@@ -168,7 +168,7 @@ const bonelesscuts = [
     img: "https://dao54xqhg9jfa.cloudfront.net/OMS-ProductMerchantdising/3e9023d4-e2f7-2fe6-c68f-75014733ff7e/original/Chicken_Mince_Large_Pack_Hero_Shot.jpg?format=webp",
     desc: "Tender, perfectly ground meat from our Nakhrebaaz team!",
     weight: "450gms",
-    mrp: "₹299",
+    price: "₹299",
   },
 
   {
@@ -177,7 +177,7 @@ const bonelesscuts = [
     img: "https://dao54xqhg9jfa.cloudfront.net/OMS-ProductMerchantdising/2831d674-fd93-eec9-f638-5cf11c850d24/original/Lamb-Leg-(Boneless)-Hero-Shot_(1).jpg?format=webp",
     desc: "Tender, boneless, evenly-cut chunks of velvety, lean lamb meat taken from the hind legs",
     weight: "500gms",
-    mrp: "₹790",
+    price: "₹790",
   },
 
   {
@@ -186,7 +186,7 @@ const bonelesscuts = [
     img: "https://dao54xqhg9jfa.cloudfront.net/OMS-ProductMerchantdising/1d3e67ab-07dd-3f3b-9c38-ce72952f939e/original/p0_tile_images-10.jpg?format=webp",
     desc: "From unpolluted Indian waters, freshly cleaned, creamy textured fillets of premium basa",
     weight: "450gms",
-    mrp: "₹515",
+    price: "₹515",
   },
 
   {
@@ -195,7 +195,7 @@ const bonelesscuts = [
     img: "https://dao54xqhg9jfa.cloudfront.net/OMS-ProductMerchantdising/7cb0a040-aaea-f6ed-55a3-7960e4243f54/original/breat.jpg?format=webp",
     desc: "Tender, boneless fillets of chicken meat cut from the breast.",
     weight: "900gms",
-    mrp: "₹529",
+    price: "₹529",
   },
 
   {
@@ -204,7 +204,7 @@ const bonelesscuts = [
     img: "https://dao54xqhg9jfa.cloudfront.net/OMS-ProductMerchantdising/b8da82a5-5164-fb4a-fde6-19b21104ef8c/original/Chicken-Mince.jpeg?format=webp",
     desc: "Boneless, minced chicken for a variety of dishes",
     weight: "900gms",
-    mrp: "₹549",
+    price: "₹549",
   },
 ];
 
@@ -215,7 +215,7 @@ const breakfast = [
     img: "https://dao54xqhg9jfa.cloudfront.net/OMS-ProductMerchantdising/fee95638-21fd-1706-4569-ed42430fd716/original/Sriracha-chicken-spreadsTIle-image.jpg?format=webp",
     desc: " Freshly cooked chicken in a creamy, spicy sriracha base.",
     weight: "Pieces: 1",
-    mrp: "₹229",
+    price: "₹229",
   },
 
   {
@@ -224,7 +224,7 @@ const breakfast = [
     img: "https://dao54xqhg9jfa.cloudfront.net/OMS-ProductMerchantdising/faa6ff18-1108-6acf-4885-aa0fdb5e13ec/original/Chunky-Shawarma-Chicken-Spread_(7).jpg?format=webp",
     desc: " A creamy base with freshly roasted chicken chunks along with the sweet chilly dispersion of cracked black pepper pieces and garlic.",
     weight: "Pieces: 1",
-    mrp: "₹219",
+    price: "₹219",
   },
 
   {
@@ -233,7 +233,7 @@ const breakfast = [
     img: "https://dao54xqhg9jfa.cloudfront.net/OMS-ProductMerchantdising/b7cbafbe-bdf9-39cc-30c0-5a7c432309d8/original/Chunky-Herby-Tomato-Chicken-Spread_(1).jpg?format=webp",
     desc: "A pleasant contrast of Meaty chicken chunks flavored with Chilli and Garlic in a tomato creamy base inspired by the European Flavours.",
     weight: "Pieces: 1",
-    mrp: "₹199",
+    price: "₹199",
   },
 
   {
@@ -242,7 +242,7 @@ const breakfast = [
     img: "https://dao54xqhg9jfa.cloudfront.net/OMS-ProductMerchantdising/0d28ad62-9409-c682-3c22-8e0ebc1697d5/original/Chunky-Continental-Chicken-Spread.jpg?format=webp",
     desc: "A Nakhrebaaz chef's creation: Real chicken & mega flavour",
     weight: "Pieces: 1",
-    mrp: "₹219",
+    price: "₹219",
   },
 
   {
@@ -251,7 +251,7 @@ const breakfast = [
     img: "https://d2407na1z3fc0t.cloudfront.net/prodDev/pr_drokbgb2jhb/1/prod_display_image/1634375004.4382--2021-10-1614:33:24--905?format=webp",
     desc: "A blend of freshly cooked juicy prawn chunks in a spicy Sriracha base.",
     weight: "Pieces: 1",
-    mrp: "₹249",
+    price: "₹249",
   },
 
   {
@@ -260,7 +260,7 @@ const breakfast = [
     img: "https://dao54xqhg9jfa.cloudfront.net/OMS-ProductMerchantdising/ad60f59b-612e-11b8-80f4-3308430cc609/original/Peppery-Chicken-Salami_(1).jpg?format=webp",
     desc: "Our Nakhrebaaz chefs present this meaty gourmet treat",
     weight: "Pieces: 8 Net wt: 125gms",
-    mrp: "₹199",
+    price: "₹199",
   },
 
   {
@@ -269,7 +269,7 @@ const breakfast = [
     img: "https://dao54xqhg9jfa.cloudfront.net/OMS-ProductMerchantdising/36c60289-829d-830f-d4c7-c62675adb323/original/Frank---Chorizo-unCooked+new.jpg?format=webp",
     desc: "Chicken Sausage smoked with chorizo spice mix",
     weight: "Pieces: 4",
-    mrp: "₹299",
+    price: "₹299",
   },
   {
     id: 208,
@@ -277,7 +277,7 @@ const breakfast = [
     img: "https://dao54xqhg9jfa.cloudfront.net/OMS-ProductMerchantdising/1ce4618e-f9ac-ad01-3ab2-5f9b26ba6a2b/original/Frank---Classic-UNCooked+tag.jpg?format=webp",
     desc: "Chicken Sausage smoked with fine oakwood.",
     weight: "Pieces: 4",
-    mrp: "₹275",
+    price: "₹275",
   },
 
   {
@@ -286,7 +286,7 @@ const breakfast = [
     img: "https://dao54xqhg9jfa.cloudfront.net/OMS-ProductMerchantdising/dcc2fd54-2e8e-2a56-ae3a-1491ad1db9bf/original/Salami-&-Chicken-Spread.jpg?format=webp",
     desc: "8 pieces of salami & a Chunky Shawarma Chicken Spread",
     weight: "Pieces: 4",
-    mrp: "₹397",
+    price: "₹397",
   },
 ];
 
@@ -508,6 +508,7 @@ const Home = () => {
         >
           {shopcategory &&
             shopcategory.map((item) => (
+              <Link to='/product'>
               <GridItem key={item.id} w="fit-content" textAlign="center">
                 {/* <Box>
           {loading && (
@@ -516,7 +517,8 @@ const Home = () => {
             </Box>
           )}
         </Box>  */}
-                <Box
+
+               <Box
                   overflow="hidden"
                   w={{ lg: "264px", md: "264px", sm: "80%" }}
                   h="204px"
@@ -547,6 +549,8 @@ const Home = () => {
                     />
                   )}
                 </Box>
+               
+                
 
                 <Text
                   color="#3e4d60"
@@ -559,6 +563,7 @@ const Home = () => {
                   {item.title}
                 </Text>
               </GridItem>
+              </Link>
             ))}
         </Grid>
       </Container>

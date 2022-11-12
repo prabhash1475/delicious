@@ -21,14 +21,14 @@ import axios from "axios"
 import { useState1 } from "./Hooks"
 import { OrderBox } from "./OrderBox";
 import metopiaImg from "./Metopia3.png"
-import { Calc } from "./Calc";
+// import { Calc } from "./Calc";
 import { useEffect } from "react";
 import {InfoIcon} from '@chakra-ui/icons'
 import {useDispatch,useSelector} from 'react-redux'
 import { get_data_failure, get_data_request, get_data_success } from "./Redux/Cart/action";
 import { loadData, saveData } from "./Redux/utils/localStorage";
 
-export const Cart=()=>{
+export const Cart=({bg})=>{
 
       const { isOpen, onOpen, onClose } = useDisclosure();
       const [size, setSize] = useState1('');
@@ -44,7 +44,6 @@ export const Cart=()=>{
       const dispatch=useDispatch();
 
      saveData("sampleCartData",data)
-    //  const sampleCartData=loadData("sampleCartData") || []
       
       const fetchData=(url)=>{
         dispatch(get_data_request())
@@ -68,16 +67,6 @@ export const Cart=()=>{
         onOpen()
       }
 
-      // console.log(data,"Hello")
-
-    //   const calc=()=>{
-    //     console.log(subtotal)
-    //     subtotal=cartData.map((e)=>{
-    //     setSubtotal(+subtotal+(+e.price));
-    //   })
-    //   console.log(subtotal)
-    //   return +subtotal
-    // }
     let price=0;
     // const cal=calc()
     // console.log(calc())  
@@ -87,10 +76,7 @@ export const Cart=()=>{
       // console.log(price)
       priceArr.shift()
        price=priceArr.join("")
-      // console.log(typeof(+price),price)
-      // console.log((+subtotal)+(+e.price),i,e.price,subtotal)
       return (subtotal=(+price)+(+subtotal))});
-      // subtotal<399?setDc(39):setDc(0)
      }
  
       calc();
@@ -145,17 +131,6 @@ export const Cart=()=>{
 
 
 
-  //   const handleClose=(ele)=>{
-  //     let data=cartData.filter((e)=>{
-  //      console.log(e.id,ele.id)
-  //        return e.id!=ele.id
-  //     })
-  //    //  console.log(ele,cartData);
-  //     saveData("cartData",data)
-  //     setcartData(data)
-  //     setDisplay('none')
-  //  }
-
     const checkout=()=>{
       return(<></>)
     }
@@ -164,15 +139,10 @@ export const Cart=()=>{
     
       return (
         <>
-          {/* {sizes.map((size) => ( */}
-            <Button
-              onClick={(size={base:"xs",sm:"xs",md:"sm",lg:"sm"}) => handleClick(size)}
+            <Image src='https://www.licious.in/img/rebranding/cart_icon.svg'  alt='cart image'  onClick={(size={base:"xs",sm:"xs",md:"sm",lg:"sm"}) => handleClick(size)}
               key={size}
               m={4}
-              bg={'green'}
-            >Cart</Button>
-            {/* // ))}  */}
-    
+               />
           <Drawer onClose={onClose} isOpen={isOpen} size={{base:"xs",sm:"xs",md:"sm",lg:"sm"}}>
             <DrawerOverlay />
             <DrawerContent bg='white' color={'black'}>
