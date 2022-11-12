@@ -1,5 +1,8 @@
 
-import {legacy_createStore} from 'redux';
-import {reducer} from "./reducer"
+import {legacy_createStore,combineReducers} from 'redux';
+import { cartReducer} from "./Cart/reducer"
+import { authReducer} from "./Auth/reducer"
 
-export  const store=legacy_createStore(reducer);
+const rootReducer=combineReducers({auth: authReducer, cart: cartReducer})
+
+export  const store=legacy_createStore(rootReducer);
