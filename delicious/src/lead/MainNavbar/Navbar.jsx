@@ -11,12 +11,16 @@ import {
   MenuList,
   Select,
 } from "@chakra-ui/react";
+import {ChevronDownIcon} from "@chakra-ui/icons"
+
 
 import React from "react";
 
 const Navbar = () => {
   return (
+
     <div>
+
       <Box
         display={{ base: "none", sm: "none", md: "none", lg: "block" }}
         p={{ base: "0px", sm: "1px", md: "3px", lg: "10px" }}
@@ -346,7 +350,9 @@ const Navbar = () => {
           </Menu>
         </Box>
       </Box>
+
     </div>
+
   );
 };
 
