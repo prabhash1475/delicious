@@ -50,8 +50,8 @@ const {allProductData ,dataIsLoading ,dataIsError } = useSelector((state)=>{
           .catch((err)=> console.log(err) )
         //  },8000)
         
+}
         
-  }
  
 
 
