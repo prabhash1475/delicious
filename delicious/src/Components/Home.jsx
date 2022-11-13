@@ -610,11 +610,11 @@ const Home = () => {
       {/* The licious way */}
 
       <Box
-        h="300px"
+        h="full"
         shadow="0 0 18px 0 rgb(0 0 0 / 14%)"
         my="64px"
         bg="#fff"
-        pt="3px"
+        py="3px"
       >
         <Box w="85%" m="auto" mt="32px" textAlign="center">
           <Box w='50%' m='35px auto' textAlign='center' fontSize='24px' position='relative' zIndex={0}  >
@@ -642,8 +642,8 @@ const Home = () => {
 
           <Grid
             templateColumns={{
-              base: "repeat(3,1fr)",
-              md: "repeat(3,1fr)",
+              base: "repeat(2,1fr)",
+              md: "repeat(2,1fr)",
               lg: "repeat(5,1fr)",
             }}
             gap={4}
