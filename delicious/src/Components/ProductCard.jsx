@@ -35,7 +35,7 @@ const ProductCard = ({data}) => {
             <Text fontSize='14px' fontWeight='600' my='10px'>{data.weight}</Text>
             <Flex align='center' py='10px'>
                 <Box color='#D11243' >
-                <Text as='span' fontSize='14px' fontWeight='600' >MRP:</Text ><Text as='span' fontSize='20px' fontWeight='600'>{data.mrp}</Text>
+                <Text as='span' fontSize='14px' fontWeight='600' >MRP:</Text ><Text as='span' fontSize='20px' fontWeight='600'>{data.price}</Text>
                 </Box>
                 <Spacer/>
                 <Box><Button
@@ -47,7 +47,12 @@ const ProductCard = ({data}) => {
               h="35px"
               p='10px 12px'
               fontWeight='600'
-              onClick={()=>addToCart(data)}
+              onClick={()=>addToCart(data)
+                
+
+              }
+             
+              
             >
               ADD TO CART
             </Button>
