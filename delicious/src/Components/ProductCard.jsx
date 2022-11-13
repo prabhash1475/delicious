@@ -1,16 +1,25 @@
 import React from 'react'
-import {Box,Button,Flex,Heading,Image,Spacer,Text} from '@chakra-ui/react'
+import {Box,Button,Flex,Heading,Image,Spacer,Text,useToast} from '@chakra-ui/react'
 import { loadData, saveData } from '../CartComponent/Redux/utils/localStorage';
 import { useState1 } from '../CartComponent/Hooks';
 
+
 const ProductCard = ({data}) => {
 
+  const toast = useToast();
   const [cartData,setcartData] =useState1(loadData("cartData") || [])
 
   const addToCart=(e)=>{
     console.log(e)
     let data=[...cartData,e];
-    saveData("cartData",data)
+    saveData("cartData",data);
+    return  (toast({
+      title: 'Thank You...!',
+      description: "Order Added to the Cart.",
+      status: 'success',
+      duration: 1000,
+      isClosable: true,
+    }))
   }
 
   return (
