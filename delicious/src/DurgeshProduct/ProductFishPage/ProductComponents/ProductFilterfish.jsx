@@ -248,7 +248,8 @@ const ProductSelectfish =()=>{
 
 //  DATA IS HERE ------------------------------------------------------------------------------->
 
-const ProductMainData = ({src , name , weight ,price , des ,id})=>{
+const ProductMainData = ({src , name , weight ,price , des ,id , item})=>{
+  //  console.log(item)
     let style = {
      
       borderRadius:"12px", 
@@ -273,7 +274,7 @@ const ProductMainData = ({src , name , weight ,price , des ,id})=>{
             
             <div><Heading fontSize='17px' fontWeight="600" color="#D11243">MRP:{price}</Heading></div>
             <div>
-              <ProductCartButton  />
+              <ProductCartButton item={item} />
             </div>
             
            </Box>
@@ -446,7 +447,7 @@ const ResponsiveFilterFish = ({data , getAllData})=>{
   <MenuList >
     {/* <MenuItem fontSize="15px" color="#4B4F54" fontWeight="800" fontFamily='Lato'> */}
       <Menu>
-        <MenuButton as={Button} rightIcon={<ChevronDownIcon />} marginLeft="8px">
+        <MenuButton as={Button} rightIcon={<ChevronDownIcon />} marginLeft="5px" width={{base:"90px"}}>
          Bones 
         </MenuButton>
         <MenuList >
@@ -458,8 +459,8 @@ const ResponsiveFilterFish = ({data , getAllData})=>{
       </Menu>
 
       <Menu>
-        <MenuButton as={Button} rightIcon={<ChevronDownIcon />} marginLeft="10px">
-        Pack Size 
+        <MenuButton as={Button} rightIcon={<ChevronDownIcon />} marginLeft="5px" width={{base:"80px"}}>
+         Size 
         </MenuButton>
         <MenuList >
         <MenuItem fontSize="15px" color="#4B4F54" fontWeight="800" fontFamily='Lato' value="all" onClick={handleChange}>All</MenuItem>
@@ -471,7 +472,7 @@ const ResponsiveFilterFish = ({data , getAllData})=>{
       </Menu>
 
       <Menu>
-        <MenuButton as={Button} rightIcon={<ChevronDownIcon />} marginLeft="10px">
+        <MenuButton as={Button} rightIcon={<ChevronDownIcon />} marginLeft="5px" width={{base:"90px"}}>
          Suited  
         </MenuButton>
         <MenuList >

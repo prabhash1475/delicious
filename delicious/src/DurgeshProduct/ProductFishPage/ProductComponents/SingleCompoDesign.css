@@ -1,0 +1,32 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Outfit:wght@100;300;400;500;600;700;800&display=swap');
+
+*{
+    font-family:'Lato', sans-serif ;
+    /* background-color: #f7f6f6 ; */
+   
+    
+   
+}
+    
+#SinglePageMain{
+    /* border: 2px solid red; */
+    /* background-color: #f7f6f6 ; */
+    margin: auto;
+    height: auto;
+    margin-bottom: 25px;
+    
+}
+
+
+
+
+
+/*  RESPONSIVE CODE --------------------->   ------ */
+
+/* @media  (min-width: 310px) and (max-width: 990px)  { 
+   
+   
+   
+
+} */
