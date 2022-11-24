@@ -80,10 +80,14 @@ export const Cart=()=>{
            })
         }
 
+        // console.log(cartData)
+        // console.log(sampleCartData)
         useEffect(()=>{
-          setcartData(samplecartdata)
+          setcartData(cartData)
+          // setcartData(samplecartdata)
+          
           fetchData('https://tan-real-buffalo.cyclic.app/Biryani&Kebabs')
-        },[])
+        },[cartData])
       
         const handleClick = (newSize) => {
           console.log(newSize)
@@ -122,7 +126,7 @@ export const Cart=()=>{
             }
             return ele.id!=e.id;
           })
-          console.log(data2.length)
+          // console.log(data2.length)
           saveData("sampleCartData",data2)
           setsampleCartData(data2)
           setcartData([...cartData,e]);
