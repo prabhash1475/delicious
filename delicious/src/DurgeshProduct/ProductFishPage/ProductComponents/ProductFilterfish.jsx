@@ -3,7 +3,7 @@ import { Image , Text , Flex,Box , Heading ,Spacer , Button ,Center, ButtonGroup
 import "../ProductFish.css"
 import {ChevronDownIcon } from "@chakra-ui/icons"
 import {ProductCartButton} from "./ProductCartButton" 
-import { useSearchParams } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router-dom'
 import { useEffect } from 'react'
 
 const ProductFilterfish = ({src , text , getAllData ,allProductData , check}) => {
@@ -260,9 +260,11 @@ const ProductMainData = ({src , name , weight ,price , des ,id , item})=>{
  return (
     <Box shadow="2xl" w={{base:"90vw", sm: "55vw", md: "43.5vw", lg: "25vw" ,xl: "25vw",'2xl': "25vw",}} h={{base:"434px", sm: "65vh", md: "74vh", lg: "415px" ,xl: "459px",'2xl': "459px",}} style={style}  >
       
+      <Link to={`/product/${item.id}`} key={item.id} >
        <div id='productDataImages' style={{ height:"auto"}}>
         <img src={src} alt={name}/>
        </div>
+       </Link>
        
        <div id='productDataDesc' style={{border:"2px  #EBECEE" ,height:"35%" , padding:"10px 10px 10px 10px"}}>
          <Heading fontSize="15px" fontWeight="600" color="#4A4A54">{name}</Heading>

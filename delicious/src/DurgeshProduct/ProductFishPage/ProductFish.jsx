@@ -210,7 +210,7 @@ const getAllData = (queryParams,page) =>{
             })}
             {allProductData.length > 0 && allProductData.map((item)=>{
               return (
-           <Link to={`/product/${item.id}`} key={item.id}> <ProductMainData  item={item}  src={item.imgUrl} name={item.name} weight={item.weight} price={item.price} des={item.des} /> </Link>
+           <ProductMainData key={item.id}  item={item}  src={item.imgUrl} name={item.name} weight={item.weight} price={item.price} des={item.des} /> 
               )
             })}
 
