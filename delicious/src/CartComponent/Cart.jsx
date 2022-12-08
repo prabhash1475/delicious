@@ -178,11 +178,16 @@ export const Cart=()=>{
       
         return (
           <>
+            
+            <div display={"flex"}  flexDirection={"row"}>
+
              <Image src='https://www.licious.in/img/rebranding/cart_icon.svg'  alt='cart image'  onClick={(size={base:"xs",sm:"xs",md:"sm",lg:"sm"}) => handleClick(size)}
               key={size}
               m={4}
-              _hover={{cursor:"pointer"}}
-               />
+              _hover={{cursor:"pointer"}} />
+            </div>
+
+               
             <Drawer onClose={onClose} isOpen={isOpen} size={{base:"xs",sm:"xs",md:"sm",lg:"sm"}}>
               <DrawerOverlay />
               <DrawerContent bg='white' color={'black'}>

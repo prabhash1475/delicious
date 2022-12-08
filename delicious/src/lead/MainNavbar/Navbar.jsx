@@ -43,9 +43,9 @@ const Navbar = () => {
             />
           </Link>
 
-          <Box fontWeight={"bold"} display={{ lg: "flex" }} alignItems="center">
+          <Box fontWeight={"bold"} display={{ lg: "flex" }} cursor={"pointer"} alignItems="center" >
             <img src="	https://www.licious.in/img/rebranding/location_icon.svg" />
-            <Select border="none">
+            <Select border="none" cursor={"pointer"}>
               <option value="option1">Banglore</option>
               <option value="option2">Mumbai</option>
               <option value="option3">Delhi</option>
@@ -79,7 +79,7 @@ const Navbar = () => {
               flex={"1"}
               width={{ sm: "12%", md: "23%", lg: "330px" }}
               h="40px"
-              placeholder="Search for any Delicious Producr"
+              placeholder="Search for any Delicious Product"
             />
             {/* <Input width="30%" placeholder="Search for any Delicious Producr" /> */}
 
@@ -94,7 +94,7 @@ const Navbar = () => {
             {/* catogery */}
             <Menu>
               <MenuButton _hover={{ bg: "none" }} bg={"none"} as={Button}>
-                <Box> Categogery</Box>
+                <Box> Category</Box>
               </MenuButton>
               <MenuList>
                 <Link to="/product">
@@ -231,7 +231,7 @@ const Navbar = () => {
           >
             {/* <Image src="https://www.licious.in/img/rebranding/cart_icon.svg" />
             Cart */}
-            <Cart />
+            <Cart cursor={"pointer"}/>
             Cart
           </Box>
           {/*  NITIN CART PAGE ---------------------------------- */}
@@ -377,6 +377,8 @@ const Navbar = () => {
                 </Menu>
                 {/* manulist end */}
               </MenuItem>
+
+
               <MenuItem fontWeight={"bold"} minH="48px">
                 <Image
                   boxSize="2rem"
@@ -401,7 +403,6 @@ const Navbar = () => {
                     alt="Fluffybuns the destroyer"
                     mr="12px"
                   /> */}
-                  <span>Cart</span>
                 </MenuItem>
               </Link>
             </MenuList>
