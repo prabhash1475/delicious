@@ -5,7 +5,7 @@
 
 <h1 align="center">Live Project :- https://delicious-durgesh9871.vercel.app/</h1>
 
- - [Live Project Link](https://deliciousbanglore.netlify.app/product)
+ - [Live Project Link](https://delicious-durgesh9871.vercel.app/)
 ## Authors
 
 - [@prabhash1475](https://github.com/prabhash1475)
