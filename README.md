@@ -3,7 +3,7 @@
 <h3 align="center">Licious is your one-stop fresh meat delivery shop. In here, you get nothing but the freshest meat & seafood, delivered straight to your doorstep.</h3>
 
 
-<h1 align="center">Live Project :- https://delicious-durgesh9871.vercel.app/</h1>
+<h1 align="center"> <a href="https://delicious-durgesh9871.vercel.app/" target="_blank"> Check Delicious</a></h1>
 
  - [Live Project Link](https://delicious-durgesh9871.vercel.app/)
 ## Authors
