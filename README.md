@@ -3,7 +3,7 @@
 <h3 align="center">Licious is your one-stop fresh meat delivery shop. In here, you get nothing but the freshest meat & seafood, delivered straight to your doorstep.</h3>
 
 
-<h1 align="center">Acknowledgements</h1>
+<h1 align="center">Live Project :- https://delicious-durgesh9871.vercel.app/</h1>
 
  - [Live Project Link](https://deliciousbanglore.netlify.app/product)
 ## Authors
