@@ -15,7 +15,7 @@ const ProductFilterfish = ({src , text , getAllData ,allProductData , check}) =>
      color:"#4B4F54" , 
      width: "auto" , 
      height: "100%"  , 
-     //    border: "2px solid red" , 
+    
     }
    
     const [searchParams , setSearchParams] = useSearchParams()
