@@ -24,7 +24,7 @@ const SingleCompoDesign = ({DisableRight,handleChangeAdd ,handleChangeRemove ,sr
       
     }
     
-  console.log(cartData)
+  
 
    
 
