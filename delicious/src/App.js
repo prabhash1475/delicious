@@ -12,12 +12,12 @@ import AllRoutes from "./Routes/Route";
 function App() {
   return (
     <div>
-      {/* <Navbar /> */}
+      <Navbar />
 
       {/*    Durgesh BRO CODE  */}
       <AllRoutes />
       {/*    Durgesh BRO CODE  */}
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }
