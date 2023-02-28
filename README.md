@@ -1,6 +1,6 @@
 
-<h1 align="center">Licious Website Clone</h1>
-<h3 align="center">Licious is your one-stop fresh meat delivery shop. In here, you get nothing but the freshest meat & seafood, delivered straight to your doorstep.</h3>
+<h1 align="center">Delicious</h1>
+<h3 align="center">Delicious is your one-stop fresh meat delivery shop. In here, you get nothing but the freshest meat & seafood, delivered straight to your doorstep.</h3>
 
 
  <h3 align="center"><a href="https://delicious-durgesh9871.vercel.app/"><strong>Want to see live preview »</strong></a></h3>
