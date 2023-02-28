@@ -24,14 +24,9 @@ const SingleCompoDesign = ({DisableRight,handleChangeAdd ,handleChangeRemove ,sr
       
     }
     
-  console.log(cartData)
+  
 
-    // useEffect(()=>{
-
-     
-    // },[])
-      
-//  console.log(cartData)
+   
 
 
   return (
